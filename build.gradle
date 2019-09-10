@@ -49,7 +49,6 @@ dependencies {
     testCompile("org.junit.jupiter:junit-jupiter-params:${junitVersion}")
     testRuntime("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     testCompile("org.mockito:mockito-junit-jupiter:${mockitoVersion}")
-    testCompile('com.nhaarman:mockito-kotlin:1.6.0')
 
     compile 'org.apache.logging.log4j:log4j-api-kotlin:1.0.0'
     compile 'org.apache.logging.log4j:log4j-api:2.11.2'

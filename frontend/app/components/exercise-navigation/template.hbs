@@ -1,0 +1,8 @@
+{{#each (sort-by 'order' @tasks) as |task|}}
+  {{#link-to "series.exercise.task" task}}
+    {{task.order}}
+  {{/link-to}}
+  &nbsp;
+{{else}}
+  Пока в этом упражнении нет задач 🤷‍♂️
+{{/each}}

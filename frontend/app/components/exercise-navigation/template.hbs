@@ -1,6 +1,10 @@
-{{#each (sort-by 'order' @tasks) as |task|}}
+{{#each (sort-by 'order' @tasks) as |task index|}}
+  {{#if (eq 0 index)}}
+    Задачи:
+  {{/if}}
+
   {{#link-to "series.exercise.task" task}}
-    {{task.order}}
+    {{~task.order~}}
   {{/link-to}}
   &nbsp;
 {{else}}

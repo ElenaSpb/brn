@@ -23,7 +23,11 @@ main {
   padding:0;
   margin:0;
   height: 100%;
+}
+
+.series-page--aside {
   border-right: 1px lightgrey solid;
+  padding-right:10px;
 }
 
 .series-nav__exercies-link {
@@ -39,8 +43,8 @@ main {
 
 .series-page--canvas {
   flex-grow: 2;
-  margin-top: 48px;
-  padding:30px
+  margin-top: 25px;
+  padding:0px 30px
 }
 
 /* TASK PLAYER */
@@ -72,4 +76,9 @@ main {
 
 .task-player__results button {
   font-size: 45px;
+}
+
+
+.exercise-navigation {
+  font-size: 20px;
 }

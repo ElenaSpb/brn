@@ -1,4 +1,4 @@
-{{#each (sort-by 'order' @tasks) as |task index|}}
+{{#each (sort-by "order" @tasks) as |task index|}}
   {{#if (eq 0 index)}}
     Задачи:
   {{/if}}

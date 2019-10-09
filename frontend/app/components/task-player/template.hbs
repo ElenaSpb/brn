@@ -3,7 +3,7 @@
 <audio controls autoplay src={{@task.audioFileUrl}}/>
 
 {{#if (eq this.lastAnswer @task.word)}}
- <p class="task-player__results">
+  <p class="task-player__results">
     <br>
     Ваш ответ: «{{this.lastAnswer}}»
     <br>
@@ -13,7 +13,7 @@
     <button autofocus onclick={{action this.onFinished}}>
       Далee »
     </button>
- </p>
+  </p>
 {{else}}
   <ul class="task-player__options">
     {{#each this.shuffledWords as |word|}}

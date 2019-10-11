@@ -61,6 +61,16 @@ be found in the 'build\reports\ktlint' folder.
 It is also possible to use `gradlew ktlintFormat` command to fix code style errors automatically.
 Please note that if `gradlew ktlint` task fails, project build will fail also.
 
+
+## FE/BE dev process
+1. create branch from dev with name EPAMLABSBRN-1 for example
+2. development
+3. make MR, put it to our skype chat and wait several reviews (1 minimum)
+4. merge to in dev branch
+
+
+
+
 ## FE dev pre-requisites
 1. node v10 or above (https://nodejs.org/en/download/)
 2. yarn 1.19 or above (https://yarnpkg.com/lang/en/docs/install/#mac-stable)
@@ -73,4 +83,5 @@ yarn &&\
 ./node_modules/ember-cli/bin/ember serve
 ```
 FE dev server now accesable at http://localhost:4200/
+
 

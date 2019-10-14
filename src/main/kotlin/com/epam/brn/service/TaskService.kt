@@ -13,8 +13,8 @@ class TaskService(@Autowired val taskRepository: TaskRepository) {
 
     fun findTasks(exerciseId: String): List<TaskDto> {
         // todo: get from db
-        if (exerciseId.equals("1"))
-            return listOf(
+//        if (exerciseId.equals("1"))
+            /*return listOf(
                 TaskDto("1", "бал", 1, "no_noise/бал.mp3", listOf("бал", "бум", "быль", "боль", "зал", "мал"), "1"),
                 TaskDto("2", "бум", 2, "no_noise/бум.mp3", listOf("бум", "зум", "кум", "лунь", "дума", "куб"), "1"),
                 TaskDto(
@@ -78,7 +78,7 @@ class TaskService(@Autowired val taskRepository: TaskRepository) {
                     "1"
                 ),
                 TaskDto("5", "гад", 5, "noise_6db/гад.mp3", listOf("гад", "мат", "клад", "пат", "дать", "спать"), "1")
-            )
+            )*/
         return emptyList()
     }
 }

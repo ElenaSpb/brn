@@ -1,20 +1,17 @@
 package com.epam.brn.model
 
-import javax.persistence.CascadeType
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.JoinColumn
-import javax.persistence.ManyToOne
-import javax.persistence.OneToMany
+import javax.persistence.*
 
 @Entity
-class ExerciseSeries(
+data class ExerciseSeries(
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
+    @GeneratedValue(generator = "exercise_series_id_seq", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(
+        name = "exercise_series_id_seq",
+        sequenceName = "exercise_series_id_seq",
+        allocationSize = 50
+    )
+    val id: Long? = null,
     @Column(nullable = false)
     val name: String,
     @Column

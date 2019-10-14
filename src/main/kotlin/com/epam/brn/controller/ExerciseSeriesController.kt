@@ -1,8 +1,8 @@
 package com.epam.brn.controller
 
-import com.epam.brn.dto.SeriesDto
 import com.epam.brn.service.ExerciseSeriesService
-import com.lifescience.brn.constant.BrnPath
+import com.epam.brn.constant.BrnPath
+import com.epam.brn.dto.ExerciseSeriesDto
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController
 class ExerciseSeriesController(@Autowired val exerciseSeriesService: ExerciseSeriesService) {
 
     @GetMapping
-    fun getSeries(@RequestParam(value = "groupId", defaultValue = "0") groupId: String): List<SeriesDto> {
+    fun getSeries(@RequestParam(value = "groupId", defaultValue = "0") groupId: String): List<ExerciseSeriesDto> {
         return exerciseSeriesService.findSeries("1")
     }
 }

@@ -15,7 +15,27 @@
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
-    "test": "ember test"
+    "test": "ember test",
+    "on:precommit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn on:precommit",
+      "post-commit": "git update-index --again"
+    }
+  },
+  "lint-staged": {
+    "./*/{app,addon,tests,config}/**/*.{js,ts,json,css}": [
+      "node ./node_modules/prettier/bin-prettier.js --write",
+      "git add"
+    ],
+    "./*/{app,addon,tests}/**{!dummy}/*.hbs": [
+      "node ./node_modules/prettier/bin-prettier.js --parser=glimmer --write",
+      "git add"
+    ],
+    "./sed/{app,addon,tests}/**/*.hbs": [
+      "ember-template-lint --config-path .template-lintrc.js"
+    ]
   },
   "devDependencies": {
     "@ember/optional-features": "^1.0.0",
@@ -51,7 +71,10 @@
     "ember-truth-helpers": "^2.1.0",
     "eslint-plugin-ember": "^7.1.0",
     "eslint-plugin-node": "^10.0.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
     "loader.js": "^4.7.0",
+    "prettier": "^1.18.2",
     "qunit-dom": "^0.9.0"
   },
   "engines": {

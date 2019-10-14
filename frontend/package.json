@@ -25,11 +25,11 @@
     }
   },
   "lint-staged": {
-    "./frontend/{app,tests,config}/**/*.{js,ts,json,css}": [
+    "./{app,tests,config}/**/*.{js,ts,json,css}": [
       "node ./node_modules/prettier/bin-prettier.js --write",
       "git add"
     ],
-    "./frontend/{app,tests}/**/*.hbs": [
+    "./{app,tests}/**/*.hbs": [
       "node ./node_modules/prettier/bin-prettier.js --parser=glimmer --write",
       "git add"
     ]

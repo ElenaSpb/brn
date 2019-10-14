@@ -27,6 +27,7 @@
   "lint-staged": {
     "./{app,tests,config}/**/*.{js,ts,json,css}": [
       "node ./node_modules/prettier/bin-prettier.js --write",
+      "node ./node_modules/.bin/eslint --fix",
       "git add"
     ],
     "./{app,tests}/**/*.hbs": [

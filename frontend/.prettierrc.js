@@ -1,3 +1,5 @@
+/*eslint-env node*/
+
 module.exports = {
   'tabWidth': 2,
   'useTabs': false,

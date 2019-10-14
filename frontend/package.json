@@ -25,16 +25,13 @@
     }
   },
   "lint-staged": {
-    "./*/{app,addon,tests,config}/**/*.{js,ts,json,css}": [
+    "./frontend/{app,tests,config}/**/*.{js,ts,json,css}": [
       "node ./node_modules/prettier/bin-prettier.js --write",
       "git add"
     ],
-    "./*/{app,addon,tests}/**{!dummy}/*.hbs": [
+    "./frontend/{app,tests}/**/*.hbs": [
       "node ./node_modules/prettier/bin-prettier.js --parser=glimmer --write",
       "git add"
-    ],
-    "./sed/{app,addon,tests}/**/*.hbs": [
-      "ember-template-lint --config-path .template-lintrc.js"
     ]
   },
   "devDependencies": {

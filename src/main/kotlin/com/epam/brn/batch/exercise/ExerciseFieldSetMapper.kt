@@ -1,7 +1,6 @@
 package com.epam.brn.batch.exercise
 
 import com.epam.brn.dto.ExerciseDto
-import com.epam.brn.dto.ExerciseGroupDto
 import org.springframework.batch.item.file.mapping.FieldSetMapper
 import org.springframework.batch.item.file.transform.FieldSet
 

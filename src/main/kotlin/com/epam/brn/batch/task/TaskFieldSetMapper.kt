@@ -9,7 +9,8 @@ class TaskFieldSetMapper : FieldSetMapper<TaskDto> {
         return TaskDto(
             id = fieldSet.readLong("id"),
             exerciseId = fieldSet.readLong("exerciseId"),
-            name = fieldSet.readString("name")
+            name = fieldSet.readString("name"),
+            serialNumber = fieldSet.readInt("serialNumber")
         )
     }
 }

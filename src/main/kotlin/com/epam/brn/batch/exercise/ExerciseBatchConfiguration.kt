@@ -25,7 +25,6 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.core.io.Resource
 import javax.sql.DataSource
 
-
 @Configuration
 class ExerciseBatchConfiguration {
     @Autowired
@@ -95,5 +94,4 @@ class ExerciseBatchConfiguration {
             .dataSource(dataSource)
             .build()
     }
-
 }

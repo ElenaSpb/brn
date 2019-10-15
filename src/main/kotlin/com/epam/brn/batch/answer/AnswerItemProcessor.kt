@@ -15,6 +15,7 @@ class AnswerItemProcessor : ItemProcessor<AnswerDto, AnswerDto> {
             id = item.id,
             taskId = item.taskId,
             rightAnswer = item.rightAnswer,
-            answer = item.answer)
-     }
+            answer = item.answer
+        )
+    }
 }

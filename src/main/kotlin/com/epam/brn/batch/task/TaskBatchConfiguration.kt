@@ -25,7 +25,6 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.core.io.Resource
 import javax.sql.DataSource
 
-
 @Configuration
 class TaskBatchConfiguration {
 
@@ -47,7 +46,6 @@ class TaskBatchConfiguration {
             .end()
             .build()
     }
-
 
     @Bean
     fun taskImportFirstStep(
@@ -81,7 +79,7 @@ class TaskBatchConfiguration {
         val lineMapper = DefaultLineMapper<TaskDto>()
         val lineTokenizer = DelimitedLineTokenizer()
 
-        lineTokenizer.setNames("id", "exerciseId", "name", "resourceId")
+        lineTokenizer.setNames("id", "exerciseId", "name", "serialNumber")
 //        lineTokenizer.setIncludedFields(*intArrayOf(0, 1, 2, 3, 4))
         lineMapper.setLineTokenizer(lineTokenizer)
         lineMapper.setFieldSetMapper(taskFieldSetMapper())
@@ -93,9 +91,8 @@ class TaskBatchConfiguration {
     fun taskWriter(dataSource: DataSource): JdbcBatchItemWriter<TaskDto> {
         return JdbcBatchItemWriterBuilder<TaskDto>()
             .itemSqlParameterSourceProvider(BeanPropertyItemSqlParameterSourceProvider<TaskDto>())
-            .sql("INSERT INTO task (id, exercise_id, name, resource_id) VALUES (:id, :exerciseId,:name, :resourceId)")
+            .sql("INSERT INTO task (id, exercise_id, name, serial_number) VALUES (:id, :exerciseId,:name, :serialNumber)")
             .dataSource(dataSource)
             .build()
     }
-
 }

@@ -15,9 +15,9 @@ class ExerciseController(@Autowired val exerciseService: ExerciseService) {
 
     @GetMapping
     fun getExercises(
-        @RequestParam(value = "seriesId", defaultValue = "0") seriesId: String,
+        @RequestParam(value = "name", defaultValue = "0") name: String,
         @RequestParam(value = "userId", defaultValue = "0") userId: String
     ): List<ExerciseDto> {
-        return exerciseService.findExercises(seriesId, userId)
+        return exerciseService.findExercises(name)
     }
 }

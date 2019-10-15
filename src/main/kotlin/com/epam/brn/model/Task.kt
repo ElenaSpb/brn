@@ -1,6 +1,8 @@
 package com.epam.brn.model
 
+import com.epam.brn.dto.TaskDto
 import javax.persistence.*
+
 
 @Entity
 data class Task(
@@ -16,10 +18,18 @@ data class Task(
     val serialNumber: Int? = 0,
     @ManyToOne
     @JoinColumn(name = "exercise_id")
-    val exercise: Exercise,
+    val exercise: Exercise? = null,
     @OneToOne(cascade = [(CascadeType.ALL)], optional = true)
     @JoinColumn(name = "resource_id")
-    val resourceId: Resource?,
+    val resourceId: Resource? = null,
     @OneToMany(cascade = [(CascadeType.ALL)], mappedBy = "task", orphanRemoval = true)
     val arrayAnswers: MutableSet<Answer> = HashSet()
-)
+){
+    fun toDto() = TaskDto(
+        id = id,
+        name = name,
+        serialNumber = serialNumber,
+        resource = resourceId?.toDto(),
+        arrayAnswers = arrayAnswers.map { answer -> answer.toDto() }.toMutableSet()
+    )
+}

@@ -1,5 +1,6 @@
 package com.epam.brn.model
 
+import com.epam.brn.dto.ExerciseSeriesDto
 import javax.persistence.*
 
 @Entity
@@ -22,3 +23,11 @@ data class ExerciseSeries(
     @OneToMany(mappedBy = "exerciseSeries", cascade = [(CascadeType.ALL)])
     val exercises: MutableSet<Exercise> = HashSet()
 )
+{
+        fun toDto() = ExerciseSeriesDto(
+            id = id,
+            name = name,
+            description = description,
+            exercises = exercises . map { exercise -> exercise.toDto() }.toMutableSet()
+        )
+}

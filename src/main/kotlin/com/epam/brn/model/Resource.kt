@@ -1,5 +1,6 @@
 package com.epam.brn.model
 
+import com.epam.brn.dto.ResourceDto
 import javax.persistence.*
 
 @Entity
@@ -17,4 +18,12 @@ data class Resource(
     val soundsCount: Int,
     @OneToOne(optional = false)
     val task: Task
-)
+){
+    fun toDto() = ResourceDto(
+        id = id,
+        audioFileId = audioFileId,
+        word = word,
+        pictureId = pictureId,
+        soundsCount = soundsCount
+    )
+}

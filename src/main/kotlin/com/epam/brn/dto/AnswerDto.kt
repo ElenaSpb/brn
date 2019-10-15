@@ -4,13 +4,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore
 import javax.validation.constraints.NotBlank
 
 data class AnswerDto(
-    @NotBlank
-    val id: Long,
+    val id: Long? = null,
     @NotBlank
     @JsonIgnore
-    val taskId: Long,
-    @JsonIgnore
-    val task: TaskDto? = null,
+    val taskId: Long?,
     @NotBlank
     val rightAnswer: Boolean,
     @NotBlank

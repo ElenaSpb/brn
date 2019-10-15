@@ -17,5 +17,4 @@ object Batch {
     const val RESOURCE_EXERCISE_GROUP_INPUT_FILE = CLASSPATH_PREFIX_INPUT_DATA + "exerciseGroups.csv"
     const val RESOURCE_EXERCISE_SERIES_INPUT_FILE = CLASSPATH_PREFIX_INPUT_DATA + "exerciseSeries.csv"
     const val RESOURCE_EXERCISE_INPUT_FILE = CLASSPATH_PREFIX_INPUT_DATA + "exercises.csv"
-
 }

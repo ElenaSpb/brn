@@ -8,6 +8,6 @@ data class ExerciseSeriesDto(
     val name: String,
     val description: String?,
     @NotBlank
-    val exerciseGroup: Long,
+    val exerciseGroup: Long? = null,
     val exercises: MutableSet<ExerciseDto> = HashSet()
 )

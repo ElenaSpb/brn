@@ -13,11 +13,7 @@ class ExerciseSeriesService(@Autowired val exerciseSeriesRepository: ExerciseSer
     private val log = logger()
 
     fun findSeries(userId: String): List<ExerciseSeriesDto> {
-        // todo find users avaliable series
-        val series: List<ExerciseSeries> = exerciseSeriesRepository.findAll() as List<ExerciseSeries>
-        // todo use mapping from Andrey
-
-
-        return emptyList()
+        val series = exerciseSeriesRepository.findAll()
+        return series.map { seriesEntry -> seriesEntry.toDto() }
     }
 }

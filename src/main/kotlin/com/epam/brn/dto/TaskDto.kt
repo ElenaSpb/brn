@@ -1,15 +1,13 @@
 package com.epam.brn.dto
 
-import com.epam.brn.model.Exercise
-import com.epam.brn.model.Resource
 import com.fasterxml.jackson.annotation.JsonIgnore
 
 data class TaskDto(
     val id: Long? = null,
     @JsonIgnore
-    val exercise: Exercise? = null,
+    val exercise: Long? = null,
     @JsonIgnore
-    val exerciseId: Long,
+    val exerciseId: Long? = null,
     val name: String? = "",
     @JsonIgnore
     val resource: ResourceDto? = null,

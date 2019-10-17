@@ -1,6 +1,10 @@
 package com.epam.brn.service
 
-import com.epam.brn.model.*
+import com.epam.brn.model.Exercise
+import com.epam.brn.model.ExerciseGroup
+import com.epam.brn.model.Resource
+import com.epam.brn.model.Series
+import com.epam.brn.model.Task
 import com.epam.brn.repo.ExerciseGroupRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.ApplicationListener

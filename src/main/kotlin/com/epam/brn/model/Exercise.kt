@@ -1,7 +1,15 @@
 package com.epam.brn.model
 
 import com.epam.brn.dto.ExerciseDto
-import javax.persistence.*
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
+import javax.persistence.JoinColumn
+import javax.persistence.SequenceGenerator
+import javax.persistence.CascadeType
+import javax.persistence.ManyToOne
+import javax.persistence.OneToMany
 
 @Entity
 data class Exercise(
@@ -56,6 +64,4 @@ data class Exercise(
     override fun toString(): String {
         return "Exercise(id=$id, name='$name', description=$description, level=$level)"
     }
-
-
 }

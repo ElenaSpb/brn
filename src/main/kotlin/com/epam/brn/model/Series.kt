@@ -1,7 +1,16 @@
 package com.epam.brn.model
 
 import com.epam.brn.dto.SeriesDto
-import javax.persistence.*
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
+import javax.persistence.JoinColumn
+import javax.persistence.SequenceGenerator
+import javax.persistence.CascadeType
+import javax.persistence.ManyToOne
+import javax.persistence.OneToMany
+import javax.persistence.Column
 
 @Entity
 data class Series(
@@ -55,6 +64,4 @@ data class Series(
     override fun toString(): String {
         return "Series(id=$id, name='$name', description='$description')"
     }
-
-
 }

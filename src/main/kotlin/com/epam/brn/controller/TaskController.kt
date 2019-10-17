@@ -1,9 +1,8 @@
 package com.epam.brn.controller
 
+import com.epam.brn.constant.BrnPath
 import com.epam.brn.dto.TaskDto
 import com.epam.brn.service.TaskService
-import com.epam.brn.constant.BrnPath
-import org.apache.commons.lang3.StringUtils
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
@@ -16,7 +15,7 @@ class TaskController(@Autowired val taskService: TaskService) {
 
     @GetMapping
     fun getTasksForExerciseId(@RequestParam(value = "exerciseId", required = false) exerciseId: String?): List<TaskDto> {
-        //TODO will be improve, search will be more flexible
+        // TODO will be improve, search will be more flexible
 
         exerciseId?.let {
             return taskService.findAllTasksWithExerciseIdWithAnswers(it)

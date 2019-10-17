@@ -1,7 +1,12 @@
 package com.epam.brn.model
 
 import com.epam.brn.dto.ResourceDto
-import javax.persistence.*
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
+import javax.persistence.ManyToMany
+import javax.persistence.Column
 
 @Entity
 data class Resource(
@@ -54,6 +59,4 @@ data class Resource(
     override fun toString(): String {
         return "Resource(id=$id, audioFileUrl='$audioFileUrl', word='$word', pictureFileUrl='$pictureFileUrl', soundsCount=$soundsCount)"
     }
-
-
 }

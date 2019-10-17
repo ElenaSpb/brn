@@ -1,8 +1,17 @@
 package com.epam.brn.model
 
 import com.epam.brn.dto.TaskDto
-import javax.persistence.*
-
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
+import javax.persistence.JoinColumn
+import javax.persistence.SequenceGenerator
+import javax.persistence.CascadeType
+import javax.persistence.ManyToOne
+import javax.persistence.OneToOne
+import javax.persistence.ManyToMany
+import javax.persistence.JoinTable
 
 @Entity
 data class Task(
@@ -37,8 +46,6 @@ data class Task(
         correctAnswer = correctAnswer?.toDto(),
         answerOptions = answerOptions.map { answer -> answer.toDto() }.toMutableSet()
     )
-
-
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
@@ -66,6 +73,4 @@ data class Task(
     override fun toString(): String {
         return "Task(id=$id, name=$name, serialNumber=$serialNumber)"
     }
-
-
 }

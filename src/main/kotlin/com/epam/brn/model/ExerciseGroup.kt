@@ -1,7 +1,14 @@
 package com.epam.brn.model
 
 import com.epam.brn.dto.ExerciseGroupDto
-import javax.persistence.*
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.GenerationType
+import javax.persistence.Id
+import javax.persistence.SequenceGenerator
+import javax.persistence.CascadeType
+import javax.persistence.OneToMany
+import javax.persistence.Column
 
 @Entity
 data class ExerciseGroup(
@@ -50,6 +57,4 @@ data class ExerciseGroup(
     override fun toString(): String {
         return "ExerciseGroup(id=$id, name='$name', description=$description)"
     }
-
-
 }

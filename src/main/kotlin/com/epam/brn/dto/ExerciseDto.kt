@@ -8,6 +8,6 @@ data class ExerciseDto(
     val description: String?,
     val level: Short? = 0,
     @JsonIgnore
-    var exerciseSeriesId: Long? = null,
+    var seriesId: Long? = null,
     val tasks: MutableSet<TaskDto> = HashSet()
 )

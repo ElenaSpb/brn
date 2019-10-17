@@ -7,5 +7,5 @@ data class ExerciseGroupDto(
     @NotBlank
     val name: String,
     val description: String?,
-    val exercisesSeries: MutableSet<ExerciseSeriesDto> = HashSet()
+    val series: MutableSet<SeriesDto> = HashSet()
 )

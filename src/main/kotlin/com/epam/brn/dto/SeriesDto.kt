@@ -2,7 +2,7 @@ package com.epam.brn.dto
 
 import javax.validation.constraints.NotBlank
 
-data class ExerciseSeriesDto(
+data class SeriesDto(
     val id: Long?,
     @NotBlank
     val name: String,
